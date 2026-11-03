@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>COFFEELAB | Панель бариста</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <script src="/static/js/manager.js" defer></script>
+</head>
+<body>
+  <header class="nav-wrap"><nav class="nav shell"><a class="brand" href="/"><span class="brand-mark">C.</span> COFFEELAB</a><div class="nav-links"><a href="/">Меню</a><a class="active" href="/manager">Панель бариста</a></div><span class="nav-note">Рабочее место</span></nav></header>
+  <main class="shell manager-main">
+    <div class="section-intro"><div><span class="eyebrow dark">BACK OFFICE / ДЕМО</span><h1 class="manager-title">Панель бариста</h1></div><button id="refresh-data" class="ghost-button">Обновить данные ↻</button></div>
+    <div class="metrics"><div class="metric"><span>Всего заказов</span><strong id="metric-orders">0</strong></div><div class="metric"><span>Заказов в работе</span><strong id="metric-active">0</strong></div><div class="metric"><span>Выручка завершённых</span><strong id="metric-revenue">0 ₸</strong></div></div>
+    <div class="manager-columns"><section class="manager-card"><h2>Очередь заказов</h2><p class="muted">Новый → В работе → Готов → Выдан</p><div id="orders-table" class="table-wrap"></div></section>
+    <section class="manager-card"><h2>Склад</h2><p class="muted">Пополнение запасов доступно для учебного сценария</p><div id="inventory-table" class="table-wrap"></div></section></div>
+    <p class="manager-disclaimer">Демо-панель без авторизации. Не публикуйте её в открытом интернете.</p>
+  </main>
+  <div id="toast" class="toast" role="alert" aria-live="assertive" hidden></div>
+</body>
+</html>

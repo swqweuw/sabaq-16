@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#201911">
+  <title>COFFEELAB | Кофейня</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <script src="/static/js/catalog.js" defer></script>
+  <script src="/static/js/shop.js" defer></script>
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="nav shell" aria-label="Основная навигация">
+      <a class="brand" href="/" aria-label="CoffeeLab, главная"><span class="brand-mark">C.</span> COFFEELAB</a>
+      <div class="nav-links"><a class="active" href="/">Меню</a><a href="/manager">Панель бариста</a></div>
+      <div class="nav-note">Сделано с любовью к кофе <span class="tiny-dot"></span> Каждый день</div>
+    </nav>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="tiny-dot"></span> Fresh coffee · Almaty</span>
+        <h1>Твой кофе.<br><em>Твой момент.</em></h1>
+        <p>Выбери напитки, укажи удобное время и забери заказ без очереди.</p>
+        <a class="hero-link" href="#menu">Смотреть меню <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-art" role="img" aria-label="Абстрактная иллюстрация кофейного стакана">
+        <div class="hero-circle"></div>
+        <div class="bean bean-one"></div><div class="bean bean-two"></div><div class="bean bean-three"></div>
+        <div class="coffee-cup"><div class="cup-lid"></div><div class="cup-body"><span>C.</span></div></div>
+        <span class="hero-art-label">Your daily ritual.</span>
+      </div>
+    </section>
+    <section class="work-area" id="menu">
+      <div class="catalog-main">
+        <div class="section-intro"><div><span class="eyebrow dark">01 / НАПИТКИ</span><h2>Наше меню</h2></div><span class="muted">Найди свой любимый вкус</span></div>
+        <div class="filters"><div class="tabs" id="category-tabs">
+          <button class="tab active" type="button" data-category="all">Всё меню</button>
+          <button class="tab" type="button" data-category="coffee">Кофе</button>
+          <button class="tab" type="button" data-category="tea">Чай</button>
+          <button class="tab" type="button" data-category="special">Особенное</button>
+        </div><label class="search"><span aria-hidden="true">⌕</span><input type="search" id="menu-search" placeholder="Поиск напитка..." aria-label="Поиск напитка"></label></div>
+        <div id="menu-grid" class="menu-grid" aria-live="polite"><p class="muted">Загружаем меню...</p></div>
+      </div>
+      <aside class="checkout-panel" aria-label="Корзина и оформление">
+        <div class="panel-header"><div><span class="eyebrow dark">02 / ЗАКАЗ</span><h2>Твоя корзина</h2></div><span class="cart-count" id="cart-count">0</span></div>
+        <div id="cart-items" class="cart-items" aria-live="polite"><p class="empty-cart">Здесь пока пусто. Добавь любимый напиток ☕</p></div>
+        <div class="promo-row"><input id="promo-code" autocomplete="off" placeholder="Промокод" aria-label="Промокод"><button id="apply-promo" type="button">Применить</button></div>
+        <p class="promo-hint">WELCOME10 от 1500 ₸ · STUDENT15 от 2400 ₸</p>
+        <div class="totals"><div><span>Сумма</span><strong id="subtotal">0 ₸</strong></div><div><span>Скидка</span><strong id="discount">0 ₸</strong></div><div class="total-line"><span>Итого</span><strong id="total">0 ₸</strong></div></div>
+        <div class="checkout-fields">
+          <label for="customer-name">Имя для заказа</label>
+          <input id="customer-name" maxlength="60" placeholder="Как к вам обращаться?" autocomplete="name">
+          <label for="pickup-slot">Время самовывоза</label>
+          <select id="pickup-slot">
+            <option value="">Выберите время</option>
+            <option>09:00</option><option>10:00</option><option>11:00</option><option>12:00</option>
+            <option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option>
+            <option>17:00</option><option>18:00</option><option>19:00</option><option>20:00</option>
+          </select>
+          <label for="order-note">Комментарий (необязательно)</label>
+          <textarea id="order-note" rows="2" maxlength="250" placeholder="Например, без сахара"></textarea>
+        </div>
+        <button class="primary-button" id="submit-order" type="button">Оформить заказ <span aria-hidden="true">↗</span></button>
+        <div class="order-result" id="order-result" hidden aria-live="polite"></div>
+      </aside>
+    </section>
+  </main>
+  <footer class="footer shell"><span>© COFFEELAB / учебный проект</span><span>Кофе готовится, код проверяется.</span></footer>
+  <div id="toast" class="toast" role="alert" aria-live="assertive" hidden></div>
+</body>
+</html>
